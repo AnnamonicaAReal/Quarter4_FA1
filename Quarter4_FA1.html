@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Sign-Up Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Support Our Charity</h1>
+
+    <p>
+        Our charity organization is dedicated to making a difference in people's lives. Here’s why you should support us:
+        <br><br>
+        1. We provide education and resources to underprivileged communities.<br>
+        2. We ensure food and medical assistance to those in need.<br>
+        3. We advocate for environmental and social causes to create a better future.
+    </p>
+
+    <form action="#" method="post">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" required>
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" required>
+
+        <label>Sex:</label>
+        <div class="radio-group">
+            <input type="radio" id="male" name="sex" value="Male" required>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="sex" value="Female">
+            <label for="female">Female</label>
+
+            <input type="radio" id="prefer-not" name="sex" value="Prefer not to say">
+            <label for="prefer-not">Prefer not to say</label>
+        </div>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="contact">Contact Number (Optional):</label>
+        <input type="text" id="contact" name="contact">
+
+        <div class="buttons">
+            <button type="submit" class="submit-btn">Submit</button>
+            <button type="reset" class="reset-btn">Reset</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
