@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Sign-Up Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 70%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            text-align: justify;
+            font-size: 16px;
+            color: #555;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .radio-group {
+            display: flex;
+            
+        }
+        button {
+            width: 48%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+        }
+        .reset-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Support Our Charity</h1>
+
+    <p>
+        Our charity organization is dedicated to making a difference in people's lives. Here’s why you should support us:
+        <br><br>
+        1. We provide education and resources to underprivileged communities.<br>
+        2. We ensure food and medical assistance to those in need.<br>
+        3. We advocate for environmental and social causes to create a better future.
+    </p>
+
+    <form id="signup-form">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" required>
+        <span class="error" id="error-first-name">First Name is required.</span>
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" required>
+        <span class="error" id="error-last-name">Last Name is required.</span>
+
+        <label>Sex:</label>
+        <div class="radio-group">
+            <input type="radio" name="sex" value="Male" required> Male
+            <input type="radio" name="sex" value="Female"> Female
+            <input type="radio" name="sex" value="Prefer not to say"> Prefer not to say
+        </div>
+        <span class="error" id="error-sex">Please select your sex.</span>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error" id="error-email">Valid email is required.</span>
+
+        <label for="contact">Contact Number (Optional):</label>
+        <input type="text" id="contact" name="contact">
+
+        <div style="display: flex; justify-content: space-between;">
+            <button type="submit" class="submit-btn">Submit</button>
+            <button type="reset" class="reset-btn">Reset</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById("signup-form").addEventListener("submit", function(event) {
+        let isValid = true;
+
+        const firstName = document.getElementById("first-name").value.trim();
+        const lastName = document.getElementById("last-name").value.trim();
+        const sex = document.querySelector('input[name="sex"]:checked');
+        const email = document.getElementById("email").value.trim();
+
+        document.getElementById("error-first-name").style.display = firstName ? "none" : "block";
+        document.getElementById("error-last-name").style.display = lastName ? "none" : "block";
+        document.getElementById("error-sex").style.display = sex ? "none" : "block";
+        document.getElementById("error-email").style.display = email ? "none" : "block";
+
+        if (!firstName || !lastName || !sex || !email) {
+            isValid = false;
+        }
+
+        if (!isValid) {
+            event.preventDefault(); 
+        }
+    });
+</script>
+
+</body>
+</html>
